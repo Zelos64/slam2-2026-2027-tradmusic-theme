@@ -1,0 +1,31 @@
+{
+  "musicians": [
+    {
+      "firstName": "Gavin",
+      "lastName": "Pennycook",
+      "image": "gavin-pennycook.jpg",
+      "instruments": [
+        {
+          "name": "Guitar",
+          "picto": "fa-solid fa-guitar"
+        },
+        {
+          "name": "Flute"
+        },
+        {
+          "name": "Violon"
+        }
+      ]
+    },
+    {
+      "firstName": "Sean",
+      "lastName": "O'Broin",
+      "image": "sean-obroin.jpeg",
+      "instruments": [
+        {
+          "name": "Flute"
+        }
+      ]
+    }
+  ]
+}
