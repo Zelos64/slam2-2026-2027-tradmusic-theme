@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <a class="btn btn--ghost btn--sm" href="login.html">Log in</a>
+            <a class="btn btn--accent btn--sm" href="register.html">Sign up</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container container--narrow section">
+    <div class="form-panel">
+        <h1 class="form-panel__title">Create your account</h1>
+        <form name="registration_form" method="post">
+            <div id="registration_form">
+                <div>
+                    <label class="required">I want to</label>
+                    <div id="registration_form_accountType">
+                        <input type="radio" id="registration_form_accountType_0" name="registration_form[accountType]" required="required" value="musician" checked="checked"><label for="registration_form_accountType_0" class="required">create a musician profile</label>
+                        <input type="radio" id="registration_form_accountType_1" name="registration_form[accountType]" required="required" value="venue_manager"><label for="registration_form_accountType_1" class="required">manage a venue</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="registration_form_firstName" class="required">First name</label>
+                    <input type="text" id="registration_form_firstName" name="registration_form[firstName]" required="required">
+                </div>
+                <div>
+                    <label for="registration_form_lastName" class="required">Last name</label>
+                    <input type="text" id="registration_form_lastName" name="registration_form[lastName]" required="required">
+                </div>
+                <div>
+                    <label for="registration_form_email" class="required">Email</label>
+                    <input type="email" id="registration_form_email" name="registration_form[email]" required="required">
+                </div>
+                <div>
+                    <label for="registration_form_plainPassword" class="required">Password</label>
+                    <input type="password" id="registration_form_plainPassword" name="registration_form[plainPassword]" required="required" aria-describedby="registration_form_plainPassword_help" autocomplete="new-password">
+                    <p id="registration_form_plainPassword_help" class="help-text">At least 8 characters.</p>
+                </div>
+                <div><button type="submit" id="registration_form_submit" name="registration_form[submit]">Sign up</button></div>
+                <input type="hidden" id="registration_form__token" name="registration_form[_token]" value="csrf-token">
+            </div>
+        </form>
+        <p class="form-panel__footer">Already registered? <a href="login.html">Log in</a></p>
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

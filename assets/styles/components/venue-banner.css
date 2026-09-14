@@ -1,0 +1,11 @@
+.venue-banner {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  background-color: var(--cream-200);
+
+  @media (max-width: 40rem) {
+    aspect-ratio: 4 / 3;
+  }
+}

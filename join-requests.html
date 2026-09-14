@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join requests · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <details class="user-menu">
+                <summary class="user-menu__toggle">
+                    <img src="assets/images/placeholder-musician.svg" alt="">
+                    <span class="user-menu__name">Gráinne Kelly</span>
+                </summary>
+                <ul class="user-menu__list">
+                    <li class="user-menu__heading">Venue manager</li>
+                    <li><a class="user-menu__link" href="my-venues.html">My venues</a></li>
+                    <li><a class="user-menu__link" href="join-requests.html">Join requests <span class="badge badge--count" aria-label="2 pending">2</span></a></li>
+                    <li class="user-menu__separator"><a class="user-menu__link" href="index.html"><span>Log out</span><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i></a></li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container">
+    <header class="page-header">
+        <p class="page-header__eyebrow">Venue manager</p>
+        <h1>Join requests</h1>
+        <p>Musicians who asked to play at the gigs of your venues.</p>
+    </header>
+
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Musician</th>
+                    <th scope="col">Gig</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"><span class="visually-hidden">Actions</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="lineup__item">
+                            <img class="lineup__avatar" src="uploads/musicians/niamh-doherty.jpg" alt="">
+                            <a href="musician.html"><strong>Niamh Doherty</strong></a>
+                        </div>
+                    </td>
+                    <td>The Crooked Bow<br><time class="text-muted" datetime="2026-10-16T21:00">Fri 16 Oct, 9:00 pm</time></td>
+                    <td class="table__message">“I play flute and whistle, I know most of the Friday regulars.”</td>
+                    <td><span class="badge badge--pending"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i> Pending</span></td>
+                    <td>
+                        <div class="table__actions">
+                            <form class="inline-form" method="post" action="#">
+                                <input type="hidden" name="_token" value="csrf-token">
+                                <button class="btn  btn--sm" type="submit"><i class="fa-solid fa-check" aria-hidden="true"></i> Accept</button>
+                            </form>
+                            <form class="inline-form" method="post" action="#">
+                                <input type="hidden" name="_token" value="csrf-token">
+                                <button class="btn btn--danger btn--sm" type="submit"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Decline</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lineup__item">
+                            <img class="lineup__avatar" src="uploads/musicians/clodagh-nolan.jpg" alt="">
+                            <a href="musician.html"><strong>Clodagh Nolan</strong></a>
+                        </div>
+                    </td>
+                    <td>The Crooked Bow<br><time class="text-muted" datetime="2026-10-16T21:00">Fri 16 Oct, 9:00 pm</time></td>
+                    <td class="table__message">—</td>
+                    <td><span class="badge badge--pending"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i> Pending</span></td>
+                    <td>
+                        <div class="table__actions">
+                            <form class="inline-form" method="post" action="#">
+                                <input type="hidden" name="_token" value="csrf-token">
+                                <button class="btn  btn--sm" type="submit"><i class="fa-solid fa-check" aria-hidden="true"></i> Accept</button>
+                            </form>
+                            <form class="inline-form" method="post" action="#">
+                                <input type="hidden" name="_token" value="csrf-token">
+                                <button class="btn btn--danger btn--sm" type="submit"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Decline</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lineup__item">
+                            <img class="lineup__avatar" src="uploads/musicians/aoife-brennan.jpg" alt="">
+                            <a href="musician.html"><strong>Aoife Brennan</strong></a>
+                        </div>
+                    </td>
+                    <td>The Salmon Weir<br><time class="text-muted" datetime="2026-10-10T21:00">Sat 10 Oct, 9:00 pm</time></td>
+                    <td class="table__message">—</td>
+                    <td><span class="badge badge--accepted"><i class="fa-solid fa-check" aria-hidden="true"></i> Accepted</span></td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lineup__item">
+                            <img class="lineup__avatar" src="uploads/musicians/cillian-walsh.jpg" alt="">
+                            <a href="musician.html"><strong>Cillian Walsh</strong></a>
+                        </div>
+                    </td>
+                    <td>The Crooked Bow<br><time class="text-muted" datetime="2026-10-17T21:30">Sat 17 Oct, 9:30 pm</time></td>
+                    <td class="table__message">—</td>
+                    <td><span class="badge badge--accepted"><i class="fa-solid fa-check" aria-hidden="true"></i> Accepted</span></td>
+                    <td>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

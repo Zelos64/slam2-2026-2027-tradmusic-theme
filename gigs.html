@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gigs · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html" aria-current="page">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <a class="btn btn--ghost btn--sm" href="login.html">Log in</a>
+            <a class="btn btn--accent btn--sm" href="register.html">Sign up</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container">
+    <header class="page-header">
+        <h1>Gigs</h1>
+        <p>Live trad music in the pubs of Ireland. Sessions are listed on each venue's page.</p>
+    </header>
+
+    <nav class="tabs" aria-label="Gigs">
+        <ul class="tabs__list">
+            <li><a class="tabs__link" href="gigs.html" aria-current="page">Upcoming gigs</a></li>
+            <li><a class="tabs__link" href="gigs.html?when=past">Past gigs</a></li>
+        </ul>
+    </nav>
+
+    <div class="filters">
+        <form name="gig_search" method="get">
+            <div id="gig_search">
+                <div>
+                    <label for="gig_search_town">Town</label>
+                    <select id="gig_search_town" name="gig_search[town]">
+                        <option value="">All towns</option>
+                        <option value="1">Doolin</option>
+                        <option value="2">Dublin</option>
+                        <option value="3">Ennis</option>
+                        <option value="4">Galway</option>
+                    </select>
+                </div>
+                <div><button type="submit" id="gig_search_submit" name="gig_search[submit]"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Search</button></div>
+            </div>
+        </form>
+    </div>
+
+    <section class="section">
+        <h2 class="visually-hidden">Upcoming gigs</h2>
+        <ul class="event-list">
+            <li class="event">
+                <time class="event__date" datetime="2026-10-14T21:00">
+                    <span class="event__weekday">Wed</span>
+                    <span class="event__day">14</span>
+                    <span class="event__month">Oct</span>
+                </time>
+                <div class="event__body">
+                    <h3 class="event__title"><a href="gig.html">Doyle&#x27;s of Doolin</a></h3>
+                    <p class="event__meta">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Doolin</span>
+                        <span><i class="fa-solid fa-clock" aria-hidden="true"></i>9:00 pm</span>
+                        <span><i class="fa-solid fa-users" aria-hidden="true"></i>Owen Doyle, Ronan Keane</span>
+                    </p>
+                </div>
+                <div class="event__action">
+                    <a class="btn btn--secondary btn--sm" href="gig.html">See the gig</a>
+                </div>
+            </li>
+            <li class="event">
+                <time class="event__date" datetime="2026-10-15T21:00">
+                    <span class="event__weekday">Thu</span>
+                    <span class="event__day">15</span>
+                    <span class="event__month">Oct</span>
+                </time>
+                <div class="event__body">
+                    <h3 class="event__title"><a href="gig.html">The Tipper &amp; Reel</a></h3>
+                    <p class="event__meta">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Dublin</span>
+                        <span><i class="fa-solid fa-clock" aria-hidden="true"></i>9:00 pm</span>
+                        <span><i class="fa-solid fa-users" aria-hidden="true"></i>Siobhán Murphy, Declan Farrell, Pádraig Lynch</span>
+                    </p>
+                </div>
+                <div class="event__action">
+                    <a class="btn btn--secondary btn--sm" href="gig.html">See the gig</a>
+                </div>
+            </li>
+            <li class="event">
+                <time class="event__date" datetime="2026-10-16T21:00">
+                    <span class="event__weekday">Fri</span>
+                    <span class="event__day">16</span>
+                    <span class="event__month">Oct</span>
+                </time>
+                <div class="event__body">
+                    <h3 class="event__title"><a href="gig.html">The Crooked Bow</a></h3>
+                    <p class="event__meta">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span>
+                        <span><i class="fa-solid fa-clock" aria-hidden="true"></i>9:00 pm</span>
+                        <span><i class="fa-solid fa-users" aria-hidden="true"></i>Aoife Brennan, Ronan Keane</span>
+                    </p>
+                </div>
+                <div class="event__action">
+                    <a class="btn btn--secondary btn--sm" href="gig.html">See the gig</a>
+                </div>
+            </li>
+            <li class="event">
+                <time class="event__date" datetime="2026-10-17T21:30">
+                    <span class="event__weekday">Sat</span>
+                    <span class="event__day">17</span>
+                    <span class="event__month">Oct</span>
+                </time>
+                <div class="event__body">
+                    <h3 class="event__title"><a href="gig.html">The Crooked Bow</a></h3>
+                    <p class="event__meta">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span>
+                        <span><i class="fa-solid fa-clock" aria-hidden="true"></i>9:30 pm</span>
+                        <span><i class="fa-solid fa-users" aria-hidden="true"></i>Clodagh Nolan, Cillian Walsh</span>
+                    </p>
+                </div>
+                <div class="event__action">
+                    <a class="btn btn--secondary btn--sm" href="gig.html">See the gig</a>
+                </div>
+            </li>
+            <li class="event">
+                <time class="event__date" datetime="2026-10-18T17:00">
+                    <span class="event__weekday">Sun</span>
+                    <span class="event__day">18</span>
+                    <span class="event__month">Oct</span>
+                </time>
+                <div class="event__body">
+                    <h3 class="event__title"><a href="gig.html">The Half Door</a></h3>
+                    <p class="event__meta">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Dublin</span>
+                        <span><i class="fa-solid fa-clock" aria-hidden="true"></i>5:00 pm</span>
+                        <span><i class="fa-solid fa-users" aria-hidden="true"></i>Pádraig Lynch, Siobhán Murphy</span>
+                    </p>
+                </div>
+                <div class="event__action">
+                    <a class="btn btn--secondary btn--sm" href="gig.html">See the gig</a>
+                </div>
+            </li>
+            <li class="event">
+                <time class="event__date" datetime="2026-10-21T20:00">
+                    <span class="event__weekday">Wed</span>
+                    <span class="event__day">21</span>
+                    <span class="event__month">Oct</span>
+                </time>
+                <div class="event__body">
+                    <h3 class="event__title"><a href="gig.html">The Old Forge</a></h3>
+                    <p class="event__meta">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Ennis</span>
+                        <span><i class="fa-solid fa-clock" aria-hidden="true"></i>8:00 pm</span>
+                        <span><i class="fa-solid fa-users" aria-hidden="true"></i>Máire Quinlan, Cillian Walsh</span>
+                    </p>
+                </div>
+                <div class="event__action">
+                    <a class="btn btn--secondary btn--sm" href="gig.html">See the gig</a>
+                </div>
+            </li>
+            <li class="event">
+                <time class="event__date" datetime="2026-10-23T20:30">
+                    <span class="event__weekday">Fri</span>
+                    <span class="event__day">23</span>
+                    <span class="event__month">Oct</span>
+                </time>
+                <div class="event__body">
+                    <h3 class="event__title"><a href="gig.html">The Salmon Weir</a></h3>
+                    <p class="event__meta">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span>
+                        <span><i class="fa-solid fa-clock" aria-hidden="true"></i>8:30 pm</span>
+                        <span><i class="fa-solid fa-users" aria-hidden="true"></i>Niamh Doherty, Clodagh Nolan</span>
+                    </p>
+                </div>
+                <div class="event__action">
+                    <a class="btn btn--secondary btn--sm" href="gig.html">See the gig</a>
+                </div>
+            </li>
+        </ul>
+    </section>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* Search forms displayed in a row, e.g. <div class="filters">{{ form(form) }}</div> */
+.filters {
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-lg);
+
+  & form > div:not(:has(> label)) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: var(--space-md);
+  }
+
+  & div:has(> label) {
+    flex: 1 1 12rem;
+  }
+
+  & form > div > div:has(> button),
+  & form > div > button {
+    flex: 0 0 auto;
+  }
+
+  & form > div > ul:not([class]):first-child {
+    flex-basis: 100%;
+  }
+}

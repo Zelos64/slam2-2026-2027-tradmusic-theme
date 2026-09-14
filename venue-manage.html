@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage The Crooked Bow · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <details class="user-menu">
+                <summary class="user-menu__toggle">
+                    <img src="assets/images/placeholder-musician.svg" alt="">
+                    <span class="user-menu__name">Gráinne Kelly</span>
+                </summary>
+                <ul class="user-menu__list">
+                    <li class="user-menu__heading">Venue manager</li>
+                    <li><a class="user-menu__link" href="my-venues.html">My venues</a></li>
+                    <li><a class="user-menu__link" href="join-requests.html">Join requests <span class="badge badge--count" aria-label="2 pending">2</span></a></li>
+                    <li class="user-menu__separator"><a class="user-menu__link" href="index.html"><span>Log out</span><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i></a></li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container">
+    <header class="page-header">
+        <p class="page-header__eyebrow">Venue manager</p>
+        <h1>The Crooked Bow</h1>
+        <div class="page-header__actions">
+            <a class="btn btn--secondary btn--sm" href="venue.html"><i class="fa-solid fa-eye" aria-hidden="true"></i> View public page</a>
+            <a class="btn btn--secondary btn--sm" href="venue-form.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit venue</a>
+        </div>
+    </header>
+
+    <div class="alert-list">
+        <div class="alert alert--success" role="status"><p>The gig has been saved.</p></div>
+    </div>
+
+    <section class="section" style="padding-top: 0">
+        <div class="section__header">
+            <h2>Gigs</h2>
+            <a class="btn btn--sm" href="gig-form.html"><i class="fa-solid fa-plus" aria-hidden="true"></i> New gig</a>
+        </div>
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Lineup</th>
+                        <th scope="col">Join requests</th>
+                        <th scope="col"><span class="visually-hidden">Actions</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="gig.html"><strong><time datetime="2026-10-16T21:00">Fri 16 Oct, 9:00 pm</time></strong></a></td>
+                        <td>Aoife Brennan, Ronan Keane</td>
+                        <td><a href="join-requests.html"><span class="badge badge--pending">2 pending</span></a></td>
+                        <td>
+                            <div class="table__actions">
+                                <a class="btn btn--secondary btn--sm" href="gig-form.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit</a>
+                                <form class="inline-form" method="post" action="#">
+                                    <input type="hidden" name="_token" value="csrf-token">
+                                    <button class="btn btn--danger btn--sm" type="submit"><i class="fa-solid fa-trash" aria-hidden="true"></i> Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="gig.html"><strong><time datetime="2026-10-17T21:30">Sat 17 Oct, 9:30 pm</time></strong></a></td>
+                        <td>Clodagh Nolan, Cillian Walsh</td>
+                        <td><span class="text-muted">—</span></td>
+                        <td>
+                            <div class="table__actions">
+                                <a class="btn btn--secondary btn--sm" href="gig-form.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit</a>
+                                <form class="inline-form" method="post" action="#">
+                                    <input type="hidden" name="_token" value="csrf-token">
+                                    <button class="btn btn--danger btn--sm" type="submit"><i class="fa-solid fa-trash" aria-hidden="true"></i> Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0">
+        <div class="section__header">
+            <h2>Weekly sessions</h2>
+            <a class="btn btn--sm" href="session-form.html"><i class="fa-solid fa-plus" aria-hidden="true"></i> New session</a>
+        </div>
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Day</th>
+                        <th scope="col">Time</th>
+                        <th scope="col"><span class="visually-hidden">Actions</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Slow Session for Learners</strong></td>
+                        <td>Every Tuesday</td>
+                        <td>7:30 pm</td>
+                        <td>
+                            <div class="table__actions">
+                                <a class="btn btn--secondary btn--sm" href="session-form.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit</a>
+                                <form class="inline-form" method="post" action="#">
+                                    <input type="hidden" name="_token" value="csrf-token">
+                                    <button class="btn btn--danger btn--sm" type="submit"><i class="fa-solid fa-trash" aria-hidden="true"></i> Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sunday Evening Session</strong></td>
+                        <td>Every Sunday</td>
+                        <td>6:00 pm</td>
+                        <td>
+                            <div class="table__actions">
+                                <a class="btn btn--secondary btn--sm" href="session-form.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit</a>
+                                <form class="inline-form" method="post" action="#">
+                                    <input type="hidden" name="_token" value="csrf-token">
+                                    <button class="btn btn--danger btn--sm" type="submit"><i class="fa-solid fa-trash" aria-hidden="true"></i> Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

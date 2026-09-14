@@ -1,0 +1,79 @@
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-xs);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375em;
+  padding: 0.2em 0.7em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-decoration: none;
+
+  & img {
+    width: 1.25em;
+    height: 1.25em;
+  }
+}
+
+a.badge:hover {
+  text-decoration: underline;
+}
+
+.badge--instrument {
+  background-color: var(--color-surface-alt);
+  border-color: var(--color-border);
+  color: var(--green-900);
+}
+
+.badge--town {
+  background-color: transparent;
+  padding-inline: 0;
+  color: var(--color-text-muted);
+}
+
+.badge--available,
+.badge--accepted {
+  background-color: var(--color-success-bg);
+  border-color: var(--green-100);
+  color: var(--color-success);
+}
+
+.badge--available::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.badge--unavailable {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+.badge--pending {
+  background-color: #fbf1dc;
+  border-color: var(--cream-300);
+  color: var(--color-accent-text);
+}
+
+.badge--declined {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+.badge--count {
+  min-width: 1.6em;
+  justify-content: center;
+  padding: 0.1em 0.45em;
+  background-color: var(--color-accent);
+  color: var(--ink-900);
+}

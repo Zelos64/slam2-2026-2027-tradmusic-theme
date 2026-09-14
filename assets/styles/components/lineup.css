@@ -1,0 +1,32 @@
+.lineup {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.lineup__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.lineup__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+}
+
+.lineup__name {
+  font-weight: 700;
+
+  & a {
+    color: inherit;
+  }
+}
+
+.lineup__instruments {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

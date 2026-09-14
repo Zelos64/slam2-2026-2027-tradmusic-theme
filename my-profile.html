@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My profile · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <details class="user-menu">
+                <summary class="user-menu__toggle">
+                    <img src="uploads/musicians/aoife-brennan.jpg" alt="">
+                    <span class="user-menu__name">Aoife Brennan</span>
+                </summary>
+                <ul class="user-menu__list">
+                    <li class="user-menu__heading">Musician</li>
+                    <li><a class="user-menu__link" href="my-profile.html">My profile</a></li>
+                    <li><a class="user-menu__link" href="my-join-requests.html">My join requests</a></li>
+                    <li class="user-menu__separator"><a class="user-menu__link" href="index.html"><span>Log out</span><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i></a></li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container">
+    <header class="page-header">
+        <p class="page-header__eyebrow">My account</p>
+        <h1>My profile</h1>
+        <div class="page-header__actions">
+            <a class="btn btn--secondary btn--sm" href="musician.html"><i class="fa-solid fa-eye" aria-hidden="true"></i> View my public profile</a>
+        </div>
+    </header>
+
+    <div class="alert-list">
+        <div class="alert alert--success" role="status"><p>Your profile has been updated.</p></div>
+    </div>
+
+    <div class="form-panel">
+        <form name="musician_profile" method="post" enctype="multipart/form-data">
+            <div id="musician_profile">
+                <div>
+                    <label for="musician_profile_firstName" class="required">First name</label>
+                    <input type="text" id="musician_profile_firstName" name="musician_profile[firstName]" required="required" value="Aoife">
+                </div>
+                <div>
+                    <label for="musician_profile_lastName" class="required">Last name</label>
+                    <input type="text" id="musician_profile_lastName" name="musician_profile[lastName]" required="required" value="Brennan">
+                </div>
+                <div>
+                    <label for="musician_profile_town" class="required">Town</label>
+                    <select id="musician_profile_town" name="musician_profile[town]" required="required">
+                        <option value="">Choose a town</option>
+                        <option value="1">Doolin</option>
+                        <option value="2">Dublin</option>
+                        <option value="3">Ennis</option>
+                        <option value="4" selected="selected">Galway</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Instruments</label>
+                    <div id="musician_profile_instruments">
+                        <input type="checkbox" id="musician_profile_instruments_0" name="musician_profile[instruments][]" value="1"><label for="musician_profile_instruments_0">Banjo</label>
+                        <input type="checkbox" id="musician_profile_instruments_1" name="musician_profile[instruments][]" value="2"><label for="musician_profile_instruments_1">Bodhrán</label>
+                        <input type="checkbox" id="musician_profile_instruments_2" name="musician_profile[instruments][]" value="3"><label for="musician_profile_instruments_2">Bouzouki</label>
+                        <input type="checkbox" id="musician_profile_instruments_3" name="musician_profile[instruments][]" value="4"><label for="musician_profile_instruments_3">Button accordion</label>
+                        <input type="checkbox" id="musician_profile_instruments_4" name="musician_profile[instruments][]" value="5"><label for="musician_profile_instruments_4">Concertina</label>
+                        <input type="checkbox" id="musician_profile_instruments_5" name="musician_profile[instruments][]" value="6" checked="checked"><label for="musician_profile_instruments_5">Fiddle</label>
+                        <input type="checkbox" id="musician_profile_instruments_6" name="musician_profile[instruments][]" value="7"><label for="musician_profile_instruments_6">Flute</label>
+                        <input type="checkbox" id="musician_profile_instruments_7" name="musician_profile[instruments][]" value="8"><label for="musician_profile_instruments_7">Guitar</label>
+                        <input type="checkbox" id="musician_profile_instruments_8" name="musician_profile[instruments][]" value="9"><label for="musician_profile_instruments_8">Harp</label>
+                        <input type="checkbox" id="musician_profile_instruments_9" name="musician_profile[instruments][]" value="10"><label for="musician_profile_instruments_9">Low whistle</label>
+                        <input type="checkbox" id="musician_profile_instruments_10" name="musician_profile[instruments][]" value="11" checked="checked"><label for="musician_profile_instruments_10">Tin whistle</label>
+                        <input type="checkbox" id="musician_profile_instruments_11" name="musician_profile[instruments][]" value="12"><label for="musician_profile_instruments_11">Uilleann pipes</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="musician_profile_bio">About you</label>
+                    <textarea id="musician_profile_bio" name="musician_profile[bio]">Aoife grew up in Connemara, learning tunes by ear from her grandfather. She now plays fiddle in the pubs of Galway most weekends and teaches at the Crooked Bow&#x27;s slow session.</textarea>
+                </div>
+                <div>
+                    <label for="musician_profile_available">Available for hire</label>
+                    <input type="checkbox" id="musician_profile_available" name="musician_profile[available]" value="1" checked="checked" aria-describedby="musician_profile_available_help">
+                    <p id="musician_profile_available_help" class="help-text">Visitors can contact you through your profile.</p>
+                </div>
+                <div>
+                    <label for="musician_profile_photo">Photo</label>
+                    <input type="file" id="musician_profile_photo" name="musician_profile[photo]" aria-describedby="musician_profile_photo_help" accept="image/jpeg, image/png">
+                    <p id="musician_profile_photo_help" class="help-text">JPEG or PNG. Leave empty to keep your current photo.</p>
+                </div>
+                <div><button type="submit" id="musician_profile_submit" name="musician_profile[submit]">Save</button></div>
+                <input type="hidden" id="musician_profile__token" name="musician_profile[_token]" value="csrf-token">
+            </div>
+        </form>
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

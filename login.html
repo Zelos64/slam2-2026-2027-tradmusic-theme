@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <a class="btn btn--ghost btn--sm" href="login.html">Log in</a>
+            <a class="btn btn--accent btn--sm" href="register.html">Sign up</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container container--narrow section">
+    <div class="form-panel">
+        <h1 class="form-panel__title">Log in</h1>
+
+        <form method="post">
+            <div>
+                <label for="username">Email</label>
+                <input type="email" value="" name="_username" id="username" autocomplete="email" required autofocus>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="_password" id="password" autocomplete="current-password" required>
+            </div>
+            <div>
+                <input type="checkbox" name="_remember_me" id="remember_me">
+                <label for="remember_me">Remember me</label>
+            </div>
+            <input type="hidden" name="_csrf_token" value="csrf-token">
+            <button type="submit">Log in</button>
+        </form>
+
+        <p class="form-panel__footer">No account yet? <a href="register.html">Sign up</a></p>
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

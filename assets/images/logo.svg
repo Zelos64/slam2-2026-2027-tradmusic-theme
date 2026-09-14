@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="TradMusic">
+  <circle cx="20" cy="20" r="19" fill="#1b472e" stroke="#bf8c35" stroke-width="2"/>
+  <g fill="none" stroke="#d4a54f" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 10 C 11 17, 14 24, 13 30" stroke-width="2.2"/>
+    <path d="M12 10 Q 20 6, 28 13" stroke-width="2.2"/>
+    <path d="M28 13 L 13 30" stroke-width="3"/>
+    <path d="M16 8.9 V 26.6 M19 8.6 V 23.2 M22 9.4 V 19.8 M25 11 V 16.4" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+.site-footer {
+  margin-top: var(--space-3xl);
+  padding-block: var(--space-2xl);
+  background-color: var(--green-950);
+  color: var(--cream-200);
+  font-size: var(--text-sm);
+
+  & a {
+    color: var(--cream-100);
+
+    &:hover {
+      color: var(--brass-400);
+    }
+  }
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}

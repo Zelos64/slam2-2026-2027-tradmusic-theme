@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My venues · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <details class="user-menu">
+                <summary class="user-menu__toggle">
+                    <img src="assets/images/placeholder-musician.svg" alt="">
+                    <span class="user-menu__name">Gráinne Kelly</span>
+                </summary>
+                <ul class="user-menu__list">
+                    <li class="user-menu__heading">Venue manager</li>
+                    <li><a class="user-menu__link" href="my-venues.html">My venues</a></li>
+                    <li><a class="user-menu__link" href="join-requests.html">Join requests <span class="badge badge--count" aria-label="2 pending">2</span></a></li>
+                    <li class="user-menu__separator"><a class="user-menu__link" href="index.html"><span>Log out</span><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i></a></li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container">
+    <header class="page-header">
+        <p class="page-header__eyebrow">Venue manager</p>
+        <h1>My venues</h1>
+        <div class="page-header__actions">
+            <a class="btn btn--sm" href="venue-form.html"><i class="fa-solid fa-plus" aria-hidden="true"></i> New venue</a>
+        </div>
+    </header>
+
+    <div class="grid grid--wide">
+        <article class="card">
+            <img class="card__media" src="uploads/venues/the-crooked-bow.jpg" alt="">
+            <div class="card__body">
+                <h2 class="card__title">The Crooked Bow</h2>
+                <p class="card__meta">
+                    <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span>
+                    <span><i class="fa-solid fa-calendar" aria-hidden="true"></i>2 upcoming gigs</span>
+                    <span><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i>2 pending requests</span>
+                </p>
+                <div class="card__footer button-group">
+                    <a class="btn btn--sm" href="venue-manage.html"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Manage gigs &amp; sessions</a>
+                    <a class="btn btn--secondary btn--sm" href="venue-form.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit</a>
+                </div>
+            </div>
+        </article>
+        <article class="card">
+            <img class="card__media" src="uploads/venues/the-salmon-weir.jpg" alt="">
+            <div class="card__body">
+                <h2 class="card__title">The Salmon Weir</h2>
+                <p class="card__meta">
+                    <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span>
+                    <span><i class="fa-solid fa-calendar" aria-hidden="true"></i>1 upcoming gig</span>
+            
+                </p>
+                <div class="card__footer button-group">
+                    <a class="btn btn--sm" href="venue-manage.html"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Manage gigs &amp; sessions</a>
+                    <a class="btn btn--secondary btn--sm" href="venue-form.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit</a>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

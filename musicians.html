@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicians · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html" aria-current="page">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <a class="btn btn--ghost btn--sm" href="login.html">Log in</a>
+            <a class="btn btn--accent btn--sm" href="register.html">Sign up</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container">
+    <header class="page-header">
+        <h1>Musicians</h1>
+        <p>Find a fiddler for your wedding, a piper for your festival or a whole band for your pub.</p>
+    </header>
+
+    <div class="filters">
+        <form name="musician_search" method="get">
+            <div id="musician_search">
+                <div>
+                    <label for="musician_search_town">Town</label>
+                    <select id="musician_search_town" name="musician_search[town]">
+                        <option value="">All towns</option>
+                        <option value="1">Doolin</option>
+                        <option value="2">Dublin</option>
+                        <option value="3">Ennis</option>
+                        <option value="4">Galway</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="musician_search_instrument">Instrument</label>
+                    <select id="musician_search_instrument" name="musician_search[instrument]">
+                        <option value="">All instruments</option>
+                        <option value="1">Banjo</option>
+                        <option value="2">Bodhrán</option>
+                        <option value="3">Bouzouki</option>
+                        <option value="4">Button accordion</option>
+                        <option value="5">Concertina</option>
+                        <option value="6">Fiddle</option>
+                        <option value="7">Flute</option>
+                        <option value="8">Guitar</option>
+                        <option value="9">Harp</option>
+                        <option value="10">Low whistle</option>
+                        <option value="11">Tin whistle</option>
+                        <option value="12">Uilleann pipes</option>
+                    </select>
+                </div>
+                <div><button type="submit" id="musician_search_submit" name="musician_search[submit]"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Search</button></div>
+            </div>
+        </form>
+    </div>
+
+    <section class="section">
+        <h2 class="visually-hidden">Results</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-md)">10 musicians</p>
+        <div class="grid">
+            <article class="card">
+                <img class="card__media card__media--square" src="uploads/musicians/aoife-brennan.jpg" alt="">
+                <span class="card__tag badge badge--available">Available</span>
+                <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" href="musician.html">Aoife Brennan</a></h3>
+                    <p class="card__meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span></p>
+                    <ul class="badge-list">
+            <li><a class="badge badge--instrument" href="musicians.html?instrument=fiddle"><img src="uploads/instruments/fiddle.svg" alt=""> Fiddle</a></li>
+            <li><a class="badge badge--instrument" href="musicians.html?instrument=tin-whistle"><img src="uploads/instruments/tin-whistle.svg" alt=""> Tin whistle</a></li>
+            </ul>
+                </div>
+            </article>
+            <article class="card">
+                <img class="card__media card__media--square" src="uploads/musicians/niamh-doherty.jpg" alt="">
+                <span class="card__tag badge badge--available">Available</span>
+                <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" href="musician.html">Niamh Doherty</a></h3>
+                    <p class="card__meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span></p>
+                    <ul class="badge-list">
+            <li><a class="badge badge--instrument" href="musicians.html?instrument=flute"><img src="uploads/instruments/flute.svg" alt=""> Flute</a></li>
+            <li><a class="badge badge--instrument" href="musicians.html?instrument=tin-whistle"><img src="uploads/instruments/tin-whistle.svg" alt=""> Tin whistle</a></li>
+            </ul>
+                </div>
+            </article>
+            <article class="card">
+                <img class="card__media card__media--square" src="uploads/musicians/owen-doyle.jpg" alt="">
+    
+                <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" href="musician.html">Owen Doyle</a></h3>
+                    <p class="card__meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Doolin</span></p>
+                    <ul class="badge-list">
+            <li><a class="badge badge--instrument" href="musicians.html?instrument=fiddle"><img src="uploads/instruments/fiddle.svg" alt=""> Fiddle</a></li>
+            </ul>
+                </div>
+            </article>
+            <article class="card">
+                <img class="card__media card__media--square" src="uploads/musicians/declan-farrell.jpg" alt="">
+                <span class="card__tag badge badge--available">Available</span>
+                <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" href="musician.html">Declan Farrell</a></h3>
+                    <p class="card__meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Dublin</span></p>
+                    <ul class="badge-list">
+            <li><a class="badge badge--instrument" href="musicians.html?instrument=banjo"><img src="uploads/instruments/banjo.svg" alt=""> Banjo</a></li>
+            <li><a class="badge badge--instrument" href="musicians.html?instrument=guitar"><img src="uploads/instruments/guitar.svg" alt=""> Guitar</a></li>
+            </ul>
+                </div>
+            </article>
+            <article class="card">
+                <img class="card__media card__media--square" src="uploads/musicians/ronan-keane.jpg" alt="">
+                <span class="card__tag badge badge--available">Available</span>
+                <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" href="musician.html">Ronan Keane</a></h3>
+                    <p class="card__meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Doolin</span></p>
+                    <ul class="badge-list">
+            <li><a class="badge badge--instrument" href="musicians.html?instrument=bodhran"><img src="uploads/instruments/bodhran.svg" alt=""> Bodhrán</a></li>
+            </ul>
+                </div>
+            </article>
+            <article class="card">
+                <img class="card__media card__media--square" src="uploads/musicians/padraig-lynch.jpg" alt="">
+                <span class="card__tag badge badge--available">Available</span>
+                <div class="card__body">
+                    <h3 class="card__title"><a class="card__link" href="musician.html">Pádraig Lynch</a></h3>
+                    <p class="card__meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Dublin</span></p>
+                    <ul class="badge-list">
+            <li><a class="badge badge--instrument" href="musicians.html?instrument=button-accordion"><img src="uploads/instruments/button-accordion.svg" alt=""> Button accordion</a></li>
+            </ul>
+                </div>
+            </article>
+        </div>
+
+        <nav class="pagination" aria-label="Pagination">
+            <ul class="pagination__list">
+                <li><a class="pagination__link" aria-disabled="true"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i><span class="visually-hidden">Previous page</span></a></li>
+                <li><a class="pagination__link" href="musicians.html?page=1" aria-current="page">1</a></li>
+                <li><a class="pagination__link" href="musicians.html?page=2">2</a></li>
+                <li><a class="pagination__link" href="musicians.html?page=2"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span class="visually-hidden">Next page</span></a></li>
+            </ul>
+        </nav>
+    </section>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

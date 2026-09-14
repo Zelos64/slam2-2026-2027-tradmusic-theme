@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+    <link rel="stylesheet" href="assets/styles/styleguide.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <a class="btn btn--ghost btn--sm" href="login.html">Log in</a>
+            <a class="btn btn--accent btn--sm" href="register.html">Sign up</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <header class="page-header" lang="fr">
+        <h1>Guide des composants</h1>
+        <p>Tous les composants du thème et leurs variantes. Les écrans montrent chaque page dans son état principal&nbsp;; cette page montre les autres états, à reproduire avec des <code>{% if %}</code> dans les templates Twig.</p>
+        <nav class="sg-toc" aria-label="Sommaire">
+            <a href="#colors">Couleurs et typographie</a>
+            <a href="#header">En-tête et pied de page</a>
+            <a href="#buttons">Boutons</a>
+            <a href="#badges">Badges</a>
+            <a href="#alerts">Messages flash</a>
+            <a href="#cards">Cartes</a>
+            <a href="#events">Gigs et Sessions</a>
+            <a href="#lineup">Lineup</a>
+            <a href="#join">Ask to join</a>
+            <a href="#forms">Formulaires</a>
+            <a href="#navigation">Onglets, pagination, état vide</a>
+            <a href="#tables">Tableaux</a>
+        </nav>
+    </header>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="colors">
+        <h2 lang="fr">Couleurs et typographie</h2>
+        <p class="sg-note" lang="fr">Les couleurs sont des variables CSS définies dans <code>assets/styles/base/tokens.css</code>. Utilisez les variables de rôle (<code>--color-primary</code>, <code>--color-text-muted</code>…) plutôt que les couleurs brutes.</p>
+
+        <div class="sg-swatches">
+            <div class="sg-swatch" style="--swatch: var(--green-950)"><span>Green 950<br><code>--green-950</code></span></div>
+            <div class="sg-swatch" style="--swatch: var(--green-800)"><span>Primary<br><code>--color-primary</code></span></div>
+            <div class="sg-swatch" style="--swatch: var(--brass-500)"><span>Accent<br><code>--color-accent</code></span></div>
+            <div class="sg-swatch" style="--swatch: var(--cream-50)"><span>Background<br><code>--color-bg</code></span></div>
+            <div class="sg-swatch" style="--swatch: var(--cream-100)"><span>Surface alt<br><code>--color-surface-alt</code></span></div>
+            <div class="sg-swatch" style="--swatch: var(--ink-900)"><span>Text<br><code>--color-text</code></span></div>
+            <div class="sg-swatch" style="--swatch: var(--ink-600)"><span>Text muted<br><code>--color-text-muted</code></span></div>
+            <div class="sg-swatch" style="--swatch: var(--red-700)"><span>Danger<br><code>--color-danger</code></span></div>
+        </div>
+
+        <h3 class="sg-label" lang="fr">Titres (Fraunces) et texte (Source Sans 3)</h3>
+        <div class="sg-example stack">
+            <h1>Find your trad musicians</h1>
+            <h2>Upcoming gigs</h2>
+            <h3>The Crooked Bow</h3>
+            <h4>Sessions every week</h4>
+            <p>Aoife Brennan grew up in Connemara, learning tunes by ear from her grandfather. She now plays fiddle in the pubs of Galway most weekends. <a href="musician.html">See her profile</a>.</p>
+            <p class="text-muted"><small>Small muted text, for secondary information.</small></p>
+        </div>
+
+        <h3 class="sg-label" lang="fr">Bandeau d'accueil <code>.hero</code></h3>
+        <div class="sg-example sg-example--flush">
+            <section class="hero" style="border-radius: var(--radius-lg)">
+                <div class="container">
+                    <h1>Find your trad musicians in seconds</h1>
+                    <p>Fiddlers, pipers and bodhrán players across Ireland, the pubs where they play, and the sessions you can join.</p>
+                    <a class="btn btn--accent" href="musicians.html">Browse musicians <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="header">
+        <h2 lang="fr">En-tête et pied de page</h2>
+        <p class="sg-note" lang="fr">Visiteur anonyme&nbsp;: boutons <em>Log in</em> et <em>Sign up</em> (voir l'en-tête de cette page). Utilisateur connecté&nbsp;: menu déroulant <code>.user-menu</code> basé sur <code>&lt;details&gt;</code>, qui fonctionne sans JavaScript. Ses rubriques dépendent des rôles de l'utilisateur (<code>is_granted('ROLE_MUSICIAN')</code>, <code>is_granted('ROLE_VENUE_MANAGER')</code>)&nbsp;; ici, un User à la fois Musician et Venue Manager. Le lien actif du menu principal porte <code>aria-current="page"</code>.</p>
+
+        <h3 class="sg-label" lang="fr">Utilisateur connecté, menu ouvert</h3>
+        <div class="sg-example sg-example--flush" style="padding-bottom: 20rem">
+            <header class="site-header" style="border-radius: var(--radius-lg) var(--radius-lg) 0 0">
+                <div class="container site-header__inner">
+                    <a class="site-header__brand" href="index.html">
+                        <img src="assets/images/logo.svg" alt="" width="40" height="40">
+                        TradMusic
+                    </a>
+                    <nav class="site-nav" aria-label="Main (example)">
+                        <ul class="site-nav__list">
+                            <li><a class="site-nav__link" href="musicians.html" aria-current="page">Musicians</a></li>
+                            <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                            <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                            <li><a class="site-nav__link" href="about.html">About</a></li>
+                        </ul>
+                    </nav>
+                    <div class="site-header__account">
+                        <details class="user-menu" open>
+                            <summary class="user-menu__toggle">
+                                <img src="uploads/musicians/owen-doyle.jpg" alt="">
+                                <span class="user-menu__name">Owen Doyle</span>
+                            </summary>
+                            <ul class="user-menu__list">
+                                <li class="user-menu__heading">Musician</li>
+                                <li><a class="user-menu__link" href="my-profile.html">My profile</a></li>
+                                <li><a class="user-menu__link" href="my-join-requests.html">My join requests</a></li>
+                                <li class="user-menu__heading">Venue manager</li>
+                                <li><a class="user-menu__link" href="my-venues.html">My venues</a></li>
+                                <li><a class="user-menu__link" href="join-requests.html">Join requests <span class="badge badge--count">2</span></a></li>
+                                <li class="user-menu__separator"><a class="user-menu__link" href="index.html"><span>Log out</span><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <h3 class="sg-label" lang="fr">Pied de page</h3>
+        <div class="sg-example sg-example--flush">
+            <footer class="site-footer" style="margin-top: 0; border-radius: var(--radius-lg)">
+                <div class="container site-footer__inner">
+                    <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+                    <ul class="site-footer__links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="musicians.html">Musicians</a></li>
+                        <li><a href="gigs.html">Gigs</a></li>
+                        <li><a href="venues.html">Venues</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="buttons">
+        <h2 lang="fr">Boutons</h2>
+        <p class="sg-note" lang="fr">La classe <code>.btn</code> s'applique aux liens comme aux boutons. Un <code>&lt;button&gt;</code> sans classe dans un formulaire Symfony prend automatiquement le style principal. <code>.btn--ghost</code> est réservé aux fonds sombres.</p>
+
+        <div class="sg-example">
+            <div class="button-group">
+                <a class="btn" href="#buttons">Primary</a>
+                <a class="btn btn--secondary" href="#buttons">Secondary</a>
+                <a class="btn btn--accent" href="#buttons">Accent</a>
+                <button class="btn btn--danger" type="button"><i class="fa-solid fa-trash" aria-hidden="true"></i> Delete</button>
+                <button class="btn" type="button" disabled>Disabled</button>
+            </div>
+            <h3 class="sg-label" lang="fr">Petite taille <code>.btn--sm</code></h3>
+            <div class="button-group">
+                <a class="btn btn--sm" href="#buttons"><i class="fa-solid fa-plus" aria-hidden="true"></i> New gig</a>
+                <a class="btn btn--secondary btn--sm" href="#buttons"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit</a>
+                <button class="btn btn--danger btn--sm" type="button">Delete</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="badges">
+        <h2 lang="fr">Badges</h2>
+        <p class="sg-note" lang="fr">Les badges d'Instrument sont des liens vers la liste des Musicians filtrée sur cet instrument. L'icône est le fichier SVG téléversé pour l'Instrument (<code>uploads/instruments/</code>). Les badges d'état servent pour Available et pour les Join Requests.</p>
+
+        <div class="sg-example">
+            <h3 class="sg-label" lang="fr" style="margin-top: 0">Instruments et Town</h3>
+            <ul class="badge-list">
+                <li><a class="badge badge--instrument" href="musicians.html?instrument=fiddle"><img src="uploads/instruments/fiddle.svg" alt=""> Fiddle</a></li>
+                <li><a class="badge badge--instrument" href="musicians.html?instrument=tin-whistle"><img src="uploads/instruments/tin-whistle.svg" alt=""> Tin whistle</a></li>
+                <li><a class="badge badge--instrument" href="musicians.html?instrument=bodhran"><img src="uploads/instruments/bodhran.svg" alt=""> Bodhrán</a></li>
+                <li><a class="badge badge--instrument" href="musicians.html?instrument=uilleann-pipes"><img src="uploads/instruments/uilleann-pipes.svg" alt=""> Uilleann pipes</a></li>
+                <li><span class="badge badge--town"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Galway</span></li>
+            </ul>
+
+            <h3 class="sg-label" lang="fr">Available</h3>
+            <ul class="badge-list">
+                <li><span class="badge badge--available">Available</span></li>
+                <li><span class="badge badge--unavailable">Not available</span></li>
+            </ul>
+
+            <h3 class="sg-label" lang="fr">États d'une Join Request</h3>
+            <ul class="badge-list">
+                <li><span class="badge badge--pending"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i> Pending</span></li>
+                <li><span class="badge badge--accepted"><i class="fa-solid fa-check" aria-hidden="true"></i> Accepted</span></li>
+                <li><span class="badge badge--declined"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Declined</span></li>
+                <li><span class="badge badge--count" aria-label="2 pending requests">2</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="alerts">
+        <h2 lang="fr">Messages flash</h2>
+        <p class="sg-note" lang="fr">À afficher dans <code>base.html.twig</code> en bouclant sur <code>app.flashes</code>. Le type du message (<code>success</code>, <code>danger</code>, <code>info</code>) donne la classe <code>.alert--{type}</code>.</p>
+
+        <div class="sg-example">
+            <div class="alert-list" style="margin: 0">
+                <div class="alert alert--success" role="status"><p>Your join request has been sent to the venue manager.</p></div>
+                <div class="alert alert--info" role="status"><p>Visitors can't contact you while you are not available.</p></div>
+                <div class="alert alert--danger" role="alert"><p>You can't ask to join a gig that is already over.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="cards">
+        <h2 lang="fr">Cartes</h2>
+        <p class="sg-note" lang="fr">Le lien du titre (<code>.card__link</code>) rend toute la carte cliquable&nbsp;; les autres liens de la carte (badges) restent cliquables. Sans photo, utilisez <code>assets/images/placeholder-musician.svg</code> ou <code>placeholder-venue.svg</code>. Le badge Available n'apparaît que si le Musician est disponible.</p>
+
+        <div class="sg-example">
+            <div class="grid">
+                <article class="card">
+                    <img class="card__media card__media--square" src="uploads/musicians/aoife-brennan.jpg" alt="">
+                    <span class="card__tag badge badge--available">Available</span>
+                    <div class="card__body">
+                        <h3 class="card__title"><a class="card__link" href="musician.html">Aoife Brennan</a></h3>
+                        <p class="card__meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span></p>
+                        <ul class="badge-list">
+                            <li><a class="badge badge--instrument" href="musicians.html?instrument=fiddle"><img src="uploads/instruments/fiddle.svg" alt=""> Fiddle</a></li>
+                            <li><a class="badge badge--instrument" href="musicians.html?instrument=tin-whistle"><img src="uploads/instruments/tin-whistle.svg" alt=""> Tin whistle</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__media card__media--square" src="uploads/musicians/cillian-walsh.jpg" alt="">
+                    <div class="card__body">
+                        <h3 class="card__title"><a class="card__link" href="musician.html">Cillian Walsh</a></h3>
+                        <p class="card__meta"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Ennis</span></p>
+                        <ul class="badge-list">
+                            <li><a class="badge badge--instrument" href="musicians.html?instrument=uilleann-pipes"><img src="uploads/instruments/uilleann-pipes.svg" alt=""> Uilleann pipes</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img class="card__media" src="uploads/venues/the-crooked-bow.jpg" alt="">
+                    <div class="card__body">
+                        <h3 class="card__title"><a class="card__link" href="venue.html">The Crooked Bow</a></h3>
+                        <p class="card__meta">
+                            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span>
+                            <span><i class="fa-solid fa-calendar" aria-hidden="true"></i>2 upcoming gigs</span>
+                            <span><i class="fa-solid fa-repeat" aria-hidden="true"></i>2 weekly sessions</span>
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="events">
+        <h2 lang="fr">Gigs et Sessions</h2>
+        <p class="sg-note" lang="fr">Un Gig n'a pas de titre&nbsp;: on affiche le nom de sa Venue (ou sa date, sur la page de la Venue). Une Session affiche son nom. Un Gig affiche sa date (<code>.event__date</code>)&nbsp;; une Session, qui revient chaque semaine, affiche son jour (<code>.event__date--weekly</code>). Un Past Gig prend la classe <code>.event--past</code> et n'a pas de bouton d'action. Les dates sont formatées avec le filtre Twig <code>date</code>.</p>
+
+        <div class="sg-example">
+            <h3 class="sg-label" lang="fr" style="margin-top: 0">Upcoming Gig</h3>
+            <ul class="event-list">
+                <li class="event">
+                    <time class="event__date" datetime="2026-10-16T21:00">
+                        <span class="event__weekday">Fri</span>
+                        <span class="event__day">16</span>
+                        <span class="event__month">Oct</span>
+                    </time>
+                    <div class="event__body">
+                        <h3 class="event__title"><a href="gig.html">The Crooked Bow</a></h3>
+                        <p class="event__meta">
+                            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Galway</span>
+                            <span><i class="fa-solid fa-clock" aria-hidden="true"></i>9:00 pm</span>
+                            <span><i class="fa-solid fa-users" aria-hidden="true"></i>Aoife Brennan, Ronan Keane</span>
+                        </p>
+                    </div>
+                    <div class="event__action">
+                        <a class="btn btn--secondary btn--sm" href="gig.html">See the gig</a>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="sg-label" lang="fr">Past Gig</h3>
+            <ul class="event-list">
+                <li class="event event--past">
+                    <time class="event__date" datetime="2026-10-08T20:30">
+                        <span class="event__weekday">Thu</span>
+                        <span class="event__day">8</span>
+                        <span class="event__month">Oct</span>
+                    </time>
+                    <div class="event__body">
+                        <h3 class="event__title"><a href="gig.html">Doyle's of Doolin</a></h3>
+                        <p class="event__meta">
+                            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Doolin</span>
+                            <span><i class="fa-solid fa-clock" aria-hidden="true"></i>8:30 pm</span>
+                            <span><i class="fa-solid fa-users" aria-hidden="true"></i>Cillian Walsh</span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="sg-label" lang="fr">Session</h3>
+            <ul class="event-list">
+                <li class="event">
+                    <div class="event__date event__date--weekly">
+                        <span class="event__weekday">Every</span>
+                        <span class="event__day">Tue</span>
+                    </div>
+                    <div class="event__body">
+                        <h3 class="event__title">Slow Session for Learners</h3>
+                        <p class="event__meta">
+                            <span><i class="fa-solid fa-clock" aria-hidden="true"></i>7:30 pm</span>
+                            <span><i class="fa-solid fa-door-open" aria-hidden="true"></i>All musicians welcome</span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="lineup">
+        <h2 lang="fr">Lineup</h2>
+        <p class="sg-note" lang="fr">Liste des Musicians d'un Gig, sur la page du Gig.</p>
+
+        <div class="sg-example">
+            <ul class="lineup">
+                <li class="lineup__item">
+                    <img class="lineup__avatar" src="uploads/musicians/aoife-brennan.jpg" alt="">
+                    <div>
+                        <p class="lineup__name"><a href="musician.html">Aoife Brennan</a></p>
+                        <p class="lineup__instruments">Fiddle, Tin whistle</p>
+                    </div>
+                </li>
+                <li class="lineup__item">
+                    <img class="lineup__avatar" src="uploads/musicians/ronan-keane.jpg" alt="">
+                    <div>
+                        <p class="lineup__name"><a href="musician.html">Ronan Keane</a></p>
+                        <p class="lineup__instruments">Bodhrán</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="join">
+        <h2 lang="fr">Bloc «&nbsp;Ask to join&nbsp;»</h2>
+        <p class="sg-note" lang="fr">Sur la page d'un Gig, un seul de ces blocs est affiché selon la situation de l'utilisateur. L'écran <code>gig.html</code> montre la variante «&nbsp;formulaire&nbsp;».</p>
+
+        <div class="sg-columns sg-columns--3">
+            <div>
+                <h3 class="sg-label" lang="fr" style="margin-top: 0">1. Visiteur non connecté</h3>
+                <div class="join-status">
+                    <h3 class="join-status__title"><i class="fa-solid fa-music" aria-hidden="true"></i> Want to play at this gig?</h3>
+                    <p>Log in with your musician account to ask the venue manager to add you to the lineup.</p>
+                    <div><a class="btn btn--secondary btn--sm" href="login.html">Log in</a></div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sg-label" lang="fr" style="margin-top: 0">2. Pending</h3>
+                <div class="join-status join-status--pending">
+                    <h3 class="join-status__title"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i> Request pending</h3>
+                    <p>You asked to join this gig on 12 October. The venue manager hasn't answered yet.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sg-label" lang="fr" style="margin-top: 0">3. Dans le Lineup</h3>
+                <div class="join-status join-status--accepted">
+                    <h3 class="join-status__title"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> You're in the lineup</h3>
+                    <p>See you on Friday at The Crooked Bow!</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sg-label" lang="fr">4. Declined</h3>
+                <div class="join-status join-status--declined">
+                    <h3 class="join-status__title"><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i> Request declined</h3>
+                    <p>The venue manager declined your request for this gig.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sg-label" lang="fr">5. Past Gig</h3>
+                <div class="join-status join-status--closed">
+                    <h3 class="join-status__title"><i class="fa-solid fa-lock" aria-hidden="true"></i> This gig is over</h3>
+                    <p>Join requests are closed.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sg-label" lang="fr">6. Venue Manager du Gig</h3>
+                <div class="join-status join-status--closed">
+                    <h3 class="join-status__title"><i class="fa-solid fa-beer-mug-empty" aria-hidden="true"></i> You manage this venue</h3>
+                    <p>Add musicians directly to the lineup.</p>
+                    <div><a class="btn btn--secondary btn--sm" href="gig-form.html"><i class="fa-solid fa-pen" aria-hidden="true"></i> Edit the gig</a></div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="sg-label" lang="fr">7. Musician connecté&nbsp;: formulaire de demande</h3>
+        <div class="sg-columns">
+            <div class="join-status">
+                <h3 class="join-status__title"><i class="fa-solid fa-music" aria-hidden="true"></i> Want to play at this gig?</h3>
+                <form name="join_request" method="post">
+                    <div id="join_request">
+                        <div>
+                            <label for="join_request_message">Message to the venue manager</label>
+                            <textarea id="join_request_message" name="join_request[message]" maxlength="500" aria-describedby="join_request_message_help"></textarea>
+                            <p id="join_request_message_help" class="help-text">Optional — 500 characters max.</p>
+                        </div>
+                        <div><button type="submit" id="join_request_submit" name="join_request[submit]">Ask to join</button></div>
+                        <input type="hidden" id="join_request__token" name="join_request[_token]" value="csrf-token">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="forms">
+        <h2 lang="fr">Formulaires</h2>
+        <p class="sg-note" lang="fr">Le HTML ci-dessous est exactement celui que génère Symfony avec <code>{{ form(form) }}</code> (form theme par défaut)&nbsp;: aucune classe n'est nécessaire. Entourez simplement le formulaire d'un <code>&lt;div class="form-panel"&gt;</code>. Les formulaires qui portent une classe (boutons de suppression, etc.) ne sont pas concernés. Voir <code>docs/adr/0002</code>.</p>
+
+        <div class="sg-columns">
+            <div>
+                <h3 class="sg-label" lang="fr" style="margin-top: 0">Formulaire de contact</h3>
+                <div class="form-panel">
+                    <h3 class="form-panel__title">Contact Aoife</h3>
+                    <form name="contact" method="post">
+                        <div id="contact">
+                            <div>
+                                <label for="contact_name" class="required">Your name</label>
+                                <input type="text" id="contact_name" name="contact[name]" required="required">
+                            </div>
+                            <div>
+                                <label for="contact_email" class="required">Your email</label>
+                                <input type="email" id="contact_email" name="contact[email]" required="required">
+                            </div>
+                            <div>
+                                <label for="contact_message" class="required">Message</label>
+                                <textarea id="contact_message" name="contact[message]" required="required" aria-describedby="contact_message_help"></textarea>
+                                <p id="contact_message_help" class="help-text">Tell Aoife about the date, the place and the kind of event.</p>
+                            </div>
+                            <div><button type="submit" id="contact_send" name="contact[send]">Send message</button></div>
+                            <input type="hidden" id="contact__token" name="contact[_token]" value="csrf-token">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sg-label" lang="fr" style="margin-top: 0">Même formulaire, avec erreurs</h3>
+                <div class="form-panel">
+                    <h3 class="form-panel__title">Contact Aoife</h3>
+                    <form name="contact" method="post">
+                        <div id="contact_errors">
+                            <ul><li>The CSRF token is invalid. Please try to resubmit the form.</li></ul>
+                            <div>
+                                <label for="contact_errors_name" class="required">Your name</label>
+                                <input type="text" id="contact_errors_name" name="contact[name]" required="required" value="Siobhán">
+                            </div>
+                            <div>
+                                <label for="contact_errors_email" class="required">Your email</label>
+                                <ul><li>This value is not a valid email address.</li></ul>
+                                <input type="email" id="contact_errors_email" name="contact[email]" required="required" value="siobhan@">
+                            </div>
+                            <div>
+                                <label for="contact_errors_message" class="required">Message</label>
+                                <ul><li>This value should not be blank.</li></ul>
+                                <textarea id="contact_errors_message" name="contact[message]" required="required"></textarea>
+                            </div>
+                            <div><button type="submit" id="contact_errors_send" name="contact[send]">Send message</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="sg-label" lang="fr">Types de champs&nbsp;: select, cases à cocher, fichier, date</h3>
+        <div class="form-panel">
+            <form name="musician_profile" method="post" enctype="multipart/form-data">
+                <div id="musician_profile">
+                    <div>
+                        <label for="musician_profile_town" class="required">Town</label>
+                        <select id="musician_profile_town" name="musician_profile[town]" required="required">
+                            <option value="">Choose a town</option>
+                            <option value="1">Doolin</option>
+                            <option value="2">Dublin</option>
+                            <option value="3">Ennis</option>
+                            <option value="4" selected="selected">Galway</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Instruments</label>
+                        <div id="musician_profile_instruments">
+                            <input type="checkbox" id="musician_profile_instruments_0" name="musician_profile[instruments][]" value="1"><label for="musician_profile_instruments_0">Bodhrán</label>
+                            <input type="checkbox" id="musician_profile_instruments_1" name="musician_profile[instruments][]" value="2" checked="checked"><label for="musician_profile_instruments_1">Fiddle</label>
+                            <input type="checkbox" id="musician_profile_instruments_2" name="musician_profile[instruments][]" value="3"><label for="musician_profile_instruments_2">Flute</label>
+                            <input type="checkbox" id="musician_profile_instruments_3" name="musician_profile[instruments][]" value="4" checked="checked"><label for="musician_profile_instruments_3">Tin whistle</label>
+                            <input type="checkbox" id="musician_profile_instruments_4" name="musician_profile[instruments][]" value="5"><label for="musician_profile_instruments_4">Uilleann pipes</label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="musician_profile_available">Available for hire</label>
+                        <input type="checkbox" id="musician_profile_available" name="musician_profile[available]" value="1" checked="checked" aria-describedby="musician_profile_available_help">
+                        <p id="musician_profile_available_help" class="help-text">Visitors can contact you through your profile.</p>
+                    </div>
+                    <div>
+                        <label for="musician_profile_photo">Photo</label>
+                        <input type="file" id="musician_profile_photo" name="musician_profile[photo]" accept="image/*">
+                    </div>
+                    <div>
+                        <label for="gig_example_startsAt" class="required">Date and time</label>
+                        <input type="datetime-local" id="gig_example_startsAt" name="gig[startsAt]" required="required" value="2026-10-16T21:00">
+                    </div>
+                    <div>
+                        <label for="session_example_startsAt" class="required">Time</label>
+                        <input type="time" id="session_example_startsAt" name="session[startsAt]" required="required" value="21:30">
+                    </div>
+                    <div><button type="submit" id="musician_profile_save" name="musician_profile[save]">Save</button></div>
+                    <input type="hidden" id="musician_profile__token" name="musician_profile[_token]" value="csrf-token">
+                </div>
+            </form>
+        </div>
+
+        <h3 class="sg-label" lang="fr">Formulaire de recherche <code>.filters</code> (méthode GET)</h3>
+        <p class="sg-note" lang="fr">Même balisage Symfony, affiché en ligne grâce au conteneur <code>&lt;div class="filters"&gt;</code>.</p>
+        <div class="filters">
+            <form name="musician_search" method="get">
+                <div id="musician_search">
+                    <div>
+                        <label for="musician_search_town">Town</label>
+                        <select id="musician_search_town" name="musician_search[town]">
+                            <option value="">All towns</option>
+                            <option value="1">Doolin</option>
+                            <option value="2">Dublin</option>
+                            <option value="3">Ennis</option>
+                            <option value="4">Galway</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="musician_search_instrument">Instrument</label>
+                        <select id="musician_search_instrument" name="musician_search[instrument]">
+                            <option value="">All instruments</option>
+                            <option value="1">Bodhrán</option>
+                            <option value="2">Fiddle</option>
+                            <option value="3">Flute</option>
+                            <option value="4">Tin whistle</option>
+                            <option value="5">Uilleann pipes</option>
+                        </select>
+                    </div>
+                    <div><button type="submit" id="musician_search_search" name="musician_search[search]"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Search</button></div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="navigation">
+        <h2 lang="fr">Onglets, pagination, état vide</h2>
+        <p class="sg-note" lang="fr">Les onglets sont de simples liens (par exemple <code>?when=past</code>). L'élément actif porte <code>aria-current="page"</code>. L'état vide remplace une liste sans résultat.</p>
+
+        <div class="sg-example">
+            <nav class="tabs" aria-label="Gigs">
+                <ul class="tabs__list">
+                    <li><a class="tabs__link" href="gigs.html" aria-current="page">Upcoming gigs</a></li>
+                    <li><a class="tabs__link" href="gigs.html?when=past">Past gigs</a></li>
+                </ul>
+            </nav>
+
+            <div class="empty-state">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <h3>No musicians found</h3>
+                <p>No musician plays the uilleann pipes in Doolin yet. Try another town or instrument.</p>
+                <a class="btn btn--secondary btn--sm" href="musicians.html">Reset filters</a>
+            </div>
+
+            <nav class="pagination" aria-label="Pagination">
+                <ul class="pagination__list">
+                    <li><a class="pagination__link" aria-disabled="true"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i><span class="visually-hidden">Previous page</span></a></li>
+                    <li><a class="pagination__link" href="musicians.html?page=1" aria-current="page">1</a></li>
+                    <li><a class="pagination__link" href="musicians.html?page=2">2</a></li>
+                    <li><a class="pagination__link" href="musicians.html?page=3">3</a></li>
+                    <li><a class="pagination__link" href="musicians.html?page=2"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span class="visually-hidden">Next page</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section class="sg-section" id="tables">
+        <h2 lang="fr">Tableaux</h2>
+        <p class="sg-note" lang="fr">Utilisés dans l'espace du Venue Manager. Les actions qui modifient des données (accepter, refuser, supprimer) sont de petits formulaires POST avec un jeton CSRF, jamais de simples liens.</p>
+
+        <h3 class="sg-label" lang="fr">Join Requests à traiter</h3>
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Musician</th>
+                        <th scope="col">Gig</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"><span class="visually-hidden">Actions</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="lineup__item">
+                                <img class="lineup__avatar" src="uploads/musicians/niamh-doherty.jpg" alt="">
+                                <a href="musician.html"><strong>Niamh Doherty</strong></a>
+                            </div>
+                        </td>
+                        <td>The Crooked Bow<br><time class="text-muted" datetime="2026-10-16T21:00">Fri 16 Oct, 9:00 pm</time></td>
+                        <td class="table__message">“I play flute and whistle, I know most of the Friday regulars.”</td>
+                        <td><span class="badge badge--pending">Pending</span></td>
+                        <td>
+                            <div class="table__actions">
+                                <form class="inline-form" method="post" action="join-requests.html">
+                                    <input type="hidden" name="_token" value="csrf-token">
+                                    <button class="btn btn--sm" type="submit"><i class="fa-solid fa-check" aria-hidden="true"></i> Accept</button>
+                                </form>
+                                <form class="inline-form" method="post" action="join-requests.html">
+                                    <input type="hidden" name="_token" value="csrf-token">
+                                    <button class="btn btn--danger btn--sm" type="submit"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Decline</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="lineup__item">
+                                <img class="lineup__avatar" src="uploads/musicians/cillian-walsh.jpg" alt="">
+                                <a href="musician.html"><strong>Cillian Walsh</strong></a>
+                            </div>
+                        </td>
+                        <td>The Crooked Bow<br><time class="text-muted" datetime="2026-10-17T21:30">Sat 17 Oct, 9:30 pm</time></td>
+                        <td class="table__message text-muted">—</td>
+                        <td><span class="badge badge--accepted">Accepted</span></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

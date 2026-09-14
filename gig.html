@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gig at The Crooked Bow, Fri 16 Oct · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html" aria-current="page">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <details class="user-menu">
+                <summary class="user-menu__toggle">
+                    <img src="uploads/musicians/declan-farrell.jpg" alt="">
+                    <span class="user-menu__name">Declan Farrell</span>
+                </summary>
+                <ul class="user-menu__list">
+                    <li class="user-menu__heading">Musician</li>
+                    <li><a class="user-menu__link" href="my-profile.html">My profile</a></li>
+                    <li><a class="user-menu__link" href="my-join-requests.html">My join requests</a></li>
+                    <li class="user-menu__separator"><a class="user-menu__link" href="index.html"><span>Log out</span><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i></a></li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container">
+    <header class="page-header">
+        <p class="page-header__eyebrow">Gig</p>
+        <h1>The Crooked Bow</h1>
+        <p><time datetime="2026-10-16T21:00">Friday 16 October 2026, 9:00 pm</time> · Galway</p>
+    </header>
+
+    <div class="split">
+        <div class="stack-lg">
+            <section class="prose">
+                <p>Aoife and Ronan open the weekend with a set of Connemara reels and slides.</p>
+            </section>
+
+            <section>
+                <div class="section__header section__header--sm">
+                    <h2>Lineup</h2>
+                </div>
+                <ul class="lineup">
+                    <li class="lineup__item">
+                        <img class="lineup__avatar" src="uploads/musicians/aoife-brennan.jpg" alt="">
+                        <div>
+                            <p class="lineup__name"><a href="musician.html">Aoife Brennan</a></p>
+                            <p class="lineup__instruments">Fiddle, Tin whistle</p>
+                        </div>
+                    </li>
+                    <li class="lineup__item">
+                        <img class="lineup__avatar" src="uploads/musicians/ronan-keane.jpg" alt="">
+                        <div>
+                            <p class="lineup__name"><a href="musician.html">Ronan Keane</a></p>
+                            <p class="lineup__instruments">Bodhrán</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <aside class="stack-lg">
+            <div class="join-status">
+                <h2 class="join-status__title"><i class="fa-solid fa-music" aria-hidden="true"></i> Want to play at this gig?</h2>
+                <form name="join_request" method="post">
+                    <div id="join_request">
+                        <div>
+                            <label for="join_request_message">Message to the venue manager</label>
+                            <textarea id="join_request_message" name="join_request[message]" aria-describedby="join_request_message_help" maxlength="500"></textarea>
+                            <p id="join_request_message_help" class="help-text">Optional — 500 characters max.</p>
+                        </div>
+                        <div><button type="submit" id="join_request_submit" name="join_request[submit]">Ask to join</button></div>
+                        <input type="hidden" id="join_request__token" name="join_request[_token]" value="csrf-token">
+                    </div>
+                </form>
+            </div>
+
+            <article class="info-panel">
+                <img class="info-panel__media" src="uploads/venues/the-crooked-bow.jpg" alt="">
+                <div class="info-panel__body">
+                    <h2 class="info-panel__title"><a href="venue.html">The Crooked Bow</a></h2>
+                    <ul class="info-panel__list">
+                        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>14 Quay Street, Galway</span></li>
+                    </ul>
+                </div>
+            </article>
+        </aside>
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

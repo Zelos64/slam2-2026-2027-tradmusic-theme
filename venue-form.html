@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit The Crooked Bow · TradMusic</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container site-header__inner">
+        <a class="site-header__brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="" width="40" height="40">
+            TradMusic
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="musicians.html">Musicians</a></li>
+                <li><a class="site-nav__link" href="gigs.html">Gigs</a></li>
+                <li><a class="site-nav__link" href="venues.html">Venues</a></li>
+                <li><a class="site-nav__link" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="site-header__account">
+            <details class="user-menu">
+                <summary class="user-menu__toggle">
+                    <img src="assets/images/placeholder-musician.svg" alt="">
+                    <span class="user-menu__name">Gráinne Kelly</span>
+                </summary>
+                <ul class="user-menu__list">
+                    <li class="user-menu__heading">Venue manager</li>
+                    <li><a class="user-menu__link" href="my-venues.html">My venues</a></li>
+                    <li><a class="user-menu__link" href="join-requests.html">Join requests <span class="badge badge--count" aria-label="2 pending">2</span></a></li>
+                    <li class="user-menu__separator"><a class="user-menu__link" href="index.html"><span>Log out</span><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i></a></li>
+                </ul>
+            </details>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<div class="container">
+    <header class="page-header">
+        <p class="page-header__eyebrow">Venue manager</p>
+        <h1>Edit The Crooked Bow</h1>
+    </header>
+
+    <div class="form-panel">
+        <form name="venue" method="post" enctype="multipart/form-data">
+            <div id="venue">
+                <div>
+                    <label for="venue_name" class="required">Name</label>
+                    <input type="text" id="venue_name" name="venue[name]" required="required" value="The Crooked Bow">
+                </div>
+                <div>
+                    <label for="venue_town" class="required">Town</label>
+                    <select id="venue_town" name="venue[town]" required="required">
+                        <option value="">Choose a town</option>
+                        <option value="1">Doolin</option>
+                        <option value="2">Dublin</option>
+                        <option value="3">Ennis</option>
+                        <option value="4" selected="selected">Galway</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="venue_address" class="required">Address</label>
+                    <input type="text" id="venue_address" name="venue[address]" required="required" value="14 Quay Street, Galway">
+                </div>
+                <div>
+                    <label for="venue_description">Description</label>
+                    <textarea id="venue_description" name="venue[description]">A narrow, wood-panelled pub on Quay Street with live music seven nights a week. Musicians gather by the fireplace at the back.</textarea>
+                </div>
+                <div>
+                    <label for="venue_photo">Photo</label>
+                    <input type="file" id="venue_photo" name="venue[photo]" aria-describedby="venue_photo_help" accept="image/jpeg, image/png">
+                    <p id="venue_photo_help" class="help-text">JPEG or PNG. Leave empty to keep the current photo.</p>
+                </div>
+                <div><button type="submit" id="venue_submit" name="venue[submit]">Save</button></div>
+                <input type="hidden" id="venue__token" name="venue[_token]" value="csrf-token">
+            </div>
+        </form>
+    </div>
+</div>
+</main>
+
+<footer class="site-footer">
+    <div class="container site-footer__inner">
+        <p>TradMusic &copy; 2026 — Irish traditional music, live.</p>
+        <ul class="site-footer__links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="musicians.html">Musicians</a></li>
+            <li><a href="gigs.html">Gigs</a></li>
+            <li><a href="venues.html">Venues</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>

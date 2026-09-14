@@ -1,0 +1,52 @@
+/* Flash messages */
+.alert-list {
+  display: grid;
+  gap: var(--space-xs);
+  margin-block: var(--space-lg);
+}
+
+.alert {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-left: 4px solid currentColor;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+
+  &::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+  }
+
+  & p {
+    color: var(--color-text);
+  }
+}
+
+.alert--success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+
+  &::before {
+    content: "\f058";
+  }
+}
+
+.alert--danger {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+
+  &::before {
+    content: "\f06a";
+  }
+}
+
+.alert--info {
+  background-color: var(--color-info-bg);
+  color: var(--color-info);
+
+  &::before {
+    content: "\f05a";
+  }
+}
