@@ -1,6 +1,6 @@
 # CSS maison ciblant le balisage par défaut des formulaires Symfony
 
-Les formulaires du thème reproduisent exactement le HTML produit par le form theme par défaut de Symfony (`form_div_layout.html.twig`), y compris les états d'erreur, et le CSS maison les stylise tel quel : un simple `{{ form(form) }}` donne le rendu de la maquette, sans form theme personnalisé. On garde ainsi une identité visuelle propre au site tout en évitant aux étudiants l'écriture d'un form theme.
+Les formulaires du thème reproduisent exactement le HTML produit par le form theme par défaut de Symfony (`form_div_layout.html.twig`), y compris les états d'erreur, et le CSS maison les stylise tel quel : un simple `{% raw %}{{ form(form) }}{% endraw %}` donne le rendu de la maquette, sans form theme personnalisé. On garde ainsi une identité visuelle propre au site tout en évitant aux étudiants l'écriture d'un form theme.
 
 ## Considered Options
 
